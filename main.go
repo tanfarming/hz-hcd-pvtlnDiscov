@@ -180,15 +180,6 @@ func tracing(nextRequestID func() string) func(http.Handler) http.Handler {
 
 func getMap() interface{} {
 
-	// config, err := rest.InClusterConfig()
-	// if err != nil {
-	// 	panic(fmt.Sprintf("Error occurred while creating kubernetes config. Err: %v", err))
-	// }
-	// clientSet, err := kubernetes.NewForConfig(config)
-	// if err != nil {
-	// 	panic(fmt.Sprintf("Error occurred while connecting to kubernetes cluster. Err: %v", err))
-	// }
-
 	clientSet := getLocalK8sClientSet()
 
 	nodeIP_zone_map := make(map[string]string)
